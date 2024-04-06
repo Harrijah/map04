@@ -1,0 +1,133 @@
+
+#mymodal {
+  position: absolute;
+  display: none;
+  top: 0;
+  width: 100%;
+  height: auto;
+  overflow-y: scroll;
+  background: rgba(0, 0, 0, 0.6);
+  .modal-content {
+    width: 70%;
+    @media screen and (max-width: 600px) {
+      width: 90%;
+    }
+    margin: 25px auto 0;
+    background: $lightgray;
+    .modal-header {
+      .entete {
+        position: relative;
+        text-align: center;
+      }
+    }
+    .modal-body {
+      padding: 15px 10%;
+      .bodycontainer {
+        margin: 0 auto;
+        // background-color: red;
+        .homeform {
+          margin: 0 auto;
+          // background-color: blue;
+          form {
+            position: relative;
+            .midtitle {
+              text-align: center;
+              font-size: 2rem;
+              font-weight: 800;
+            }
+            input,
+            select {
+              min-height: 40px;
+              margin-bottom: 10px;
+              padding: 0 10px;
+              border: solid 1px $color4;
+              background-color: whitesmoke;
+            }
+            .inputtitle {
+              margin-top: 10px;
+            }
+            .longinput {
+              width: 100%;
+              border: solid 1px $aurexus;
+              border-radius: 5px;
+            }
+            input[type="date"] {
+              width: 150px;
+            }
+
+            input[type="submit"],
+            #validateform,
+            #closeme {
+              position: relative;
+              margin: 20px auto 0;
+              @include defaultinput;
+              min-width: 100px;
+              width: 25%;
+              max-width: 200px;
+              color: $color1;
+              border: solid 1px $color8;
+              background: $aurexus;
+              box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+              transition: 1s;
+              &:hover {
+                color: $color4;
+                background: $grey;
+                border: solid 1px $color4;
+                left: 5px;
+              }
+            }
+
+            .radio {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              width: 70%;
+              // margin: auto;
+              label {
+                display: flex;
+                align-items: center;
+                align-items: center;
+              }
+              input[type="radio"] {
+                width: 30px;
+                margin-right: 5px;
+                vertical-align: middle;
+                /* Ajoutez un espacement entre le bouton radio et le texte */
+              }
+            }
+          }
+        }
+      }
+    }
+    .modal-footer {
+      #validateform,
+      #closeme {
+        position: relative;
+        display: block;
+        margin: 10px auto 20px;
+        padding: 10px;
+        border: solid 1px $color4;
+        border-radius: 20px;
+        // @include defaultinput;
+        // text-align: right;
+        max-width: 200px;
+        width: 10%;
+        min-width: 100px;
+        color: $color1;
+        border: solid 1px $color8;
+        background: $aurexus;
+        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+        transition: 1s;
+        &:hover {
+          color: $color4;
+          background: $grey;
+          border: solid 1px $color4;
+          left: 5px;
+        }
+      }
+    }
+  }
+}
+.showmodal{
+  display: block !important;
+}

@@ -1,0 +1,1467 @@
+#mainpage {
+  position: relative;
+  display: block;
+  width: 100%;
+  #mainpagecontainer {
+    position: relative;
+    width: 100%;
+    #allcontainer {
+      position: relative;
+      width: 100%;
+      #principalcontainer {
+        position: relative;
+        display: block;
+        align-items: center;
+        justify-content: center;
+        .lastprojectsmodal {
+          @include homemodal;
+        }
+        .lastprojectmodalbis {
+          @include homemodal;
+          display: block !important;
+        }
+        #insidecontainer {
+          position: relative;
+          display: flex;
+          justify-content: space-around;
+          width: 100%;
+          background: $lightgray;
+          #leftpart {
+            position: relative;
+            width: 50%;
+            min-height: 100%;
+            display: block;
+            align-items: top;
+            justify-content: center;
+            background: linear-gradient(
+              125deg,
+              $lightgray 0%,
+              $lightgrey2 100%
+            );
+            overflow: hidden;
+            margin: auto;
+
+            #togglemap {
+              position: relative;
+              display: block;
+              width: 100%;
+              height: 3vh;
+              button {
+                display: block;
+                position: relative;
+                width: 100%;
+              }
+            }
+
+            .projectlistcontainer {
+              display: block;
+              position: absolute;
+              // min-width: 30%;
+              width: 300px;
+              height: auto;
+              z-index: 1;
+              background: $lightgray;
+              border-radius: 5px;
+              box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+              opacity: 0;
+              transition: 0.5s ease-in-out;
+              animation: 0.5s showlist ease-in-out 1 forwards;
+              @keyframes showlist {
+                from {
+                  opacity: 0;
+                }
+                to {
+                  opacity: 1;
+                }
+              }
+              h2 {
+                text-align: center;
+                margin: 5px auto;
+                text-decoration: underline;
+                font-size: 1rem;
+              }
+              ul {
+                margin: 0;
+                padding: 10px;
+                .myprojectdiv {
+                  font-weight: bold;
+                  text-decoration: underline;
+                }
+                li {
+                  padding-left: 15px;
+                  list-style-position: inside;
+                  font-weight: 300;
+                  text-decoration: none;
+                }
+              }
+            }
+
+            .svgcontainer {
+              svg {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                height: 97vh;
+                margin: auto;
+                left: 50%;
+                transform: translateX(-50%);
+                defs {
+                  g {
+                    .mapicon {
+                      transition: 0.6s fill;
+                      fill: $aurexus;
+                      cursor: pointer;
+                      &:hover {
+                        fill: #ffcc00 !important;
+                        cursor: pointer;
+                      }
+                    }
+                  }
+                }
+                g {
+                  .mapicon {
+                    fill: $aurexus;
+                    stroke: #ffa500;
+                    cursor: pointer;
+                    &:hover {
+                      fill: #ffcc00 !important;
+                      cursor: pointer;
+                    }
+                  }
+                }
+              }
+              .hideme {
+                display: none !important;
+              }
+            }
+          }
+          #rightpart {
+            position: relative;
+            display: block;
+            width: 50%;
+            min-height: 100vh;
+            background: $grey;
+            .hideme {
+              display: none !important;
+            }
+            .projectbox {
+              position: relative;
+              display: flex;
+              flex-direction: column;
+              .morebuttons {
+                position: relative;
+                display: flex;
+                width: 90%;
+                margin: 10px auto;
+                button {
+                  display: block;
+                  position: relative;
+                  background-color: $lightgray;
+                  height: 40px;
+                  // margin: 5px;
+                  // border-radius: 5px;
+                  border: none;
+                  border: solid 1px $aurexus;
+                  color: $aurexus;
+                  transition: 0.5s ease-in-out;
+                  cursor: pointer;
+                  &:hover {
+                    border: solid 1px $grey;
+                    color: $lightgray;
+                    background-color: $aurexus;
+                    transform: translateZ(10px);
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+                  }
+                }
+              }
+              .projectdetails {
+                position: relative;
+                display: grid;
+                width: 90%;
+                margin: auto;
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+                grid-template-rows: auto auto auto auto auto auto auto;
+                grid-template-areas:
+                  // "btn00 a1 a1 a2 a2 a3"
+
+                  "pb pb pb pb pb pb"
+                  "ttle ttle ttle ttle ttle ttle"
+                  "a1 a1 a1 a2 a2 a2"
+                  "btn01 btn02 btn03 btn04 btn05 btn06"
+                  "b1 b1 b1 b1 b1 b1"
+                  "c1 c1 c1 c1 c1 c1"
+                  "btn btn btn btn btn btn";
+
+                h2 {
+                  grid-area: ttle;
+                  margin: 0;
+                }
+                .headbox {
+                  position: relative;
+                  grid-area: pb;
+                  display: flex;
+                  width: 100%;
+                  div {
+                    position: relative;
+                    display: block;
+                    width: 60%;
+                    h1 {
+                      text-align: center;
+                      font-size: 1rem;
+                    }
+                  }
+                  .projectbutton {
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 40%;
+                    button {
+                      display: block;
+                      height: 40px;
+                      width: 100px;
+                      border: solid 1px $aurexus;
+                      // border-radius: 5px;
+                      color: $aurexus;
+                      background: $mywhite;
+                      cursor: pointer;
+                      // text-decoration: underline;
+                      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+                      &:hover {
+                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+                      }
+                    }
+                  }
+                }
+                button {
+                  display: block;
+                  position: relative;
+                  background-color: $lightgray;
+                  height: 40px;
+                  // margin: 5px;
+                  // border-radius: 5px;
+                  border: none;
+                  color: $aurexus;
+                  transition: 0.5s ease-in-out;
+                  cursor: pointer;
+                  &:hover {
+                    border: solid 1px $grey;
+                    color: $lightgray;
+                    background-color: $aurexus;
+                    transform: translateZ(10px);
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+                  }
+                }
+                .addnew {
+                  grid-area: btn;
+                  margin: 5px 0;
+                  padding: 5px 10px;
+                  color: $aurexus;
+                }
+                #btn00 {
+                  display: block;
+                  position: relative;
+                  grid-area: btn00;
+                  border: solid 1px $lightgray;
+                  color: $lightgray;
+                  background-color: #ffa500;
+                  transform: translateZ(10px);
+                  &:hover {
+                    color: $aurexus;
+                    background-color: $lightgray;
+                    transform: translateZ(10px);
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+                  }
+                }
+                #btn01 {
+                  display: block;
+                  position: relative;
+                  grid-area: btn01;
+                }
+                #btn02 {
+                  display: block;
+                  position: relative;
+                  grid-area: btn02;
+                }
+                #btn03 {
+                  display: block;
+                  position: relative;
+                  grid-area: btn03;
+                }
+                #btn04 {
+                  display: block;
+                  position: relative;
+                  grid-area: btn04;
+                }
+                #btn05 {
+                  display: block;
+                  position: relative;
+                  grid-area: btn05;
+                }
+                #btn06 {
+                  display: block;
+                  position: relative;
+                  grid-area: btn06;
+                }
+                .active {
+                  border: solid 1px $grey !important;
+                  color: $lightgray !important;
+                  background-color: $aurexus !important;
+                  transform: translateZ(10px) !important;
+                  &:hover {
+                    color: $aurexus !important;
+                    background-color: $lightgray !important;
+                    transform: translateZ(10px) !important;
+                    // box-shadow: 0 0 10px rgba(0, 0, 0, 0.5) !important;
+                  }
+                }
+                .affichage {
+                  grid-area: a1;
+                  text-align: right;
+                  #mysearchbox {
+                    height: 40px;
+                    border-radius: 5px;
+                    border: solid 1px $aurexus;
+                    width: 90%;
+                    margin: auto;
+                    padding: 0 10px;
+                    // box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+                  }
+                }
+                #selectspecs {
+                  grid-area: a2;
+                  display: block;
+                  position: relative;
+                  background-color: $lightgray;
+                  // width: 180px;
+                  right: 0;
+                  height: 40px;
+                  margin: 5px;
+                  border-radius: 5px;
+                  border: solid 1px $grey;
+                  color: $aurexus;
+                  transition: 0.5s ease-in-out;
+                  option {
+                    color: $aurexus;
+                    background-color: white;
+                  }
+                }
+                .togglepricedatabase {
+                  grid-area: a3;
+                  display: block;
+                  position: relative;
+                  background-color: $lightgray;
+                  width: 180px;
+                  right: 0;
+                  height: 40px;
+                  margin: 5px;
+                  border-radius: 5px;
+                  border: solid 1px $grey;
+                  color: $aurexus;
+                  transition: 0.5s ease-in-out;
+                }
+                .selectlist {
+                  position: relative;
+                  grid-area: b1;
+                  list-style: none;
+                  width: 100%;
+                  border: none;
+                  // border-radius: 5px;
+                  margin: 0;
+                  padding: 0;
+                  max-height: 300px;
+                  overflow-y: scroll;
+                  li {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    min-height: 45px;
+                    background-color: white;
+                    width: 100%;
+                    a {
+                      position: relative;
+                      display: flex;
+                      align-items: center;
+                      justify-content: space-between;
+                      text-decoration: none;
+                      min-height: 45px;
+                      padding: 0 10px;
+                      border-radius: 2px;
+                      width: 100%;
+                      cursor: pointer;
+                      span {
+                        position: relative;
+                        text-align: right;
+                        display: block;
+                        width: 30%;
+                        padding: 10px 5px;
+                        color: $color4;
+                      }
+                      &:hover {
+                        color: $grey;
+                        background-color: $aurexus;
+                      }
+                    }
+                  }
+                }
+                .hideme {
+                  display: none !important;
+                }
+                .selectlist03 {
+                  grid-area: c1;
+                  list-style: none;
+                  width: 100%;
+                  border: none;
+                  // border-radius: 5px;
+                  margin: 0;
+                  padding: 0;
+                  max-height: 300px;
+                  overflow-y: scroll;
+                  overflow-y: scroll;
+                  li {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    min-height: 45px;
+                    background-color: white;
+                    width: 100%;
+                    &:hover {
+                      color: $lightgrey2;
+                      background-color: $aurexus;
+                    }
+                    a {
+                      position: relative;
+                      display: grid;
+                      align-items: left;
+                      text-align: left;
+                      justify-content: space-between;
+                      text-decoration: none;
+                      min-height: 45px;
+                      padding: 0 10px;
+                      border-radius: 2px;
+                      width: 100%;
+                      font-size: 9pt;
+                      cursor: pointer;
+                      grid-template-rows: 1fr;
+                      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+                      grid-template-areas: "price01 price02 price03 Price04 price05";
+                      &:hover span {
+                        color: $lightgrey2;
+                        background-color: $aurexus;
+                      }
+                      span {
+                        position: relative;
+                        text-align: left;
+                        display: block;
+                        // width: 30%;
+                        padding: 5px 5px;
+                        color: $aurexus;
+                      }
+                    }
+                  }
+                }
+              }
+
+              .missiondetails {
+                position: relative;
+                display: grid;
+                width: 90%;
+                margin: auto;
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+                grid-template-rows: auto auto auto auto auto auto;
+                grid-template-areas:
+                  // "btn00 a1 a1 a2 a2 a3"
+
+                  "ttle ttle ttle ttle ttle ttle"
+                  "a1 a1 a1 a2 a2 a2"
+                  "btn01 btn02 btn03 btn04 btn05 btn06"
+                  "b1 b1 b1 b1 b1 b1"
+                  "c1 c1 c1 c1 c1 c1"
+                  "btn btn btn btn btn btn";
+
+                h2 {
+                  grid-area: ttle;
+                  margin: 0;
+                }
+                button {
+                  display: block;
+                  position: relative;
+                  background-color: $lightgray;
+                  height: 40px;
+                  // margin: 5px;
+                  // border-radius: 5px;
+                  border: none;
+                  color: $aurexus;
+                  transition: 0.5s ease-in-out;
+                  cursor: pointer;
+                  &:hover {
+                    border: solid 1px $grey;
+                    color: $lightgray;
+                    background-color: $aurexus;
+                    transform: translateZ(10px);
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+                  }
+                }
+                .addnew {
+                  grid-area: btn;
+                  margin: 5px 0;
+                  padding: 5px 10px;
+                  color: $aurexus;
+                }
+                #btn00 {
+                  display: block;
+                  position: relative;
+                  grid-area: btn00;
+                  border: solid 1px $lightgray;
+                  color: $lightgray;
+                  background-color: #ffa500;
+                  transform: translateZ(10px);
+                  &:hover {
+                    color: $aurexus;
+                    background-color: $lightgray;
+                    transform: translateZ(10px);
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+                  }
+                }
+                #btn01 {
+                  display: block;
+                  position: relative;
+                  grid-area: btn01;
+                }
+                #btn02 {
+                  display: block;
+                  position: relative;
+                  grid-area: btn02;
+                }
+                #btn03 {
+                  display: block;
+                  position: relative;
+                  grid-area: btn03;
+                }
+                #btn04 {
+                  display: block;
+                  position: relative;
+                  grid-area: btn04;
+                }
+                #btn05 {
+                  display: block;
+                  position: relative;
+                  grid-area: btn05;
+                }
+                #btn06 {
+                  display: block;
+                  position: relative;
+                  grid-area: btn06;
+                }
+                .active {
+                  border: solid 1px $grey !important;
+                  color: $lightgray !important;
+                  background-color: $aurexus !important;
+                  transform: translateZ(10px) !important;
+                  &:hover {
+                    color: $aurexus !important;
+                    background-color: $lightgray !important;
+                    transform: translateZ(10px) !important;
+                    // box-shadow: 0 0 10px rgba(0, 0, 0, 0.5) !important;
+                  }
+                }
+                .affichage {
+                  grid-area: a1;
+                  text-align: right;
+                  #mysearchbox {
+                    height: 40px;
+                    border-radius: 5px;
+                    border: solid 1px $aurexus;
+                    width: 90%;
+                    margin: auto;
+                    padding: 0 10px;
+                    // box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+                  }
+                }
+                #selectspecs {
+                  grid-area: a2;
+                  display: block;
+                  position: relative;
+                  background-color: $lightgray;
+                  // width: 180px;
+                  right: 0;
+                  height: 40px;
+                  margin: 5px;
+                  border-radius: 5px;
+                  border: solid 1px $grey;
+                  color: $aurexus;
+                  transition: 0.5s ease-in-out;
+                  option {
+                    color: $aurexus;
+                    background-color: white;
+                  }
+                }
+                .togglepricedatabase {
+                  grid-area: a3;
+                  display: block;
+                  position: relative;
+                  background-color: $lightgray;
+                  width: 180px;
+                  right: 0;
+                  height: 40px;
+                  margin: 5px;
+                  border-radius: 5px;
+                  border: solid 1px $grey;
+                  color: $aurexus;
+                  transition: 0.5s ease-in-out;
+                }
+                .selectlist {
+                  position: relative;
+                  grid-area: b1;
+                  list-style: none;
+                  width: 100%;
+                  border: none;
+                  // border-radius: 5px;
+                  margin: 0;
+                  padding: 0;
+                  max-height: 300px;
+                  overflow-y: scroll;
+                  li {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    min-height: 45px;
+                    background-color: white;
+                    width: 100%;
+                    a {
+                      position: relative;
+                      display: flex;
+                      align-items: center;
+                      justify-content: space-between;
+                      text-decoration: none;
+                      min-height: 45px;
+                      padding: 0 10px;
+                      border-radius: 2px;
+                      width: 100%;
+                      cursor: pointer;
+                      span {
+                        position: relative;
+                        text-align: right;
+                        display: block;
+                        width: 30%;
+                        padding: 10px 5px;
+                        color: $color4;
+                      }
+                      &:hover {
+                        color: $grey;
+                        background-color: $aurexus;
+                      }
+                    }
+                  }
+                }
+                .hideme {
+                  display: none !important;
+                }
+                .selectlist03 {
+                  grid-area: c1;
+                  list-style: none;
+                  width: 100%;
+                  border: none;
+                  // border-radius: 5px;
+                  margin: 0;
+                  padding: 0;
+                  max-height: 300px;
+                  overflow-y: scroll;
+                  overflow-y: scroll;
+                  li {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    min-height: 45px;
+                    background-color: white;
+                    width: 100%;
+                    &:hover {
+                      color: $lightgrey2;
+                      background-color: $aurexus;
+                    }
+                    a {
+                      position: relative;
+                      display: grid;
+                      align-items: left;
+                      text-align: left;
+                      justify-content: space-between;
+                      text-decoration: none;
+                      min-height: 45px;
+                      padding: 0 10px;
+                      border-radius: 2px;
+                      width: 100%;
+                      font-size: 9pt;
+                      cursor: pointer;
+                      grid-template-rows: 1fr;
+                      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+                      grid-template-areas: "price01 price02 price03 Price04 price05";
+                      &:hover span {
+                        color: $lightgrey2;
+                        background-color: $aurexus;
+                      }
+                      span {
+                        position: relative;
+                        text-align: left;
+                        display: block;
+                        // width: 30%;
+                        padding: 5px 5px;
+                        color: $aurexus;
+                      }
+                      // .price01{
+                      //   grid-area: price01;
+                      //   width: 30px;
+                      // }
+                      // .price02{
+                      //   grid-area: price02;
+                      // }
+                      // .price03{
+                      //   grid-area: price03;
+                      // }
+                      // .price04{
+                      //   grid-area: price04;
+                      // }
+                      // .price05{
+                      //   grid-area: price05;
+                      //   width: 30px;
+                      // }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    #modalcontainer {
+      position: absolute;
+      display: none;
+      top: 0;
+      width: 100%;
+      height: auto;
+      overflow-y: scroll;
+      background: rgba(0, 0, 0, 0.6);
+      .modal-content {
+        width: 100%;
+        margin: 45px auto;
+        background: $lightgray;
+        // padding: 40px 40px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        .modal-header {
+          .entete {
+            position: relative;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            background-color: $lightgrey2;
+            .bigtitle {
+              position: relative;
+              display: flex;
+              flex-direction: column;
+              h1 {
+                position: relative;
+                text-align: center;
+                font-size: 1.5rem;
+                margin: 10px auto;
+                &:after {
+                  top: 55px;
+                  content: "";
+                  position: absolute;
+                  top: 35px;
+                  left: 50%;
+                  transform: translateX(-50%);
+                  width: 80px;
+                  height: 3px;
+                  background-color: $aurexus;
+                  border-radius: 50px;
+                }
+              }
+              h2 {
+                text-align: center;
+                font-size: 1.2rem;
+                font-weight: 400;
+                margin: 0;
+              }
+            }
+            .myprojectpriority {
+              position: relative;
+              display: flex;
+              width: 100%;
+              justify-content: space-around;
+              text-align: right;
+              color: darkgray;
+              #projectstate,
+              #projectprio {
+                display: inlin-block;
+                position: relative;
+                background-color: $lightgray;
+                width: 120px;
+                right: 0;
+                height: 40px;
+                margin: 5px;
+                border-radius: 5px;
+                border: solid 1px $grey;
+                color: $aurexus;
+                transition: 0.5s ease-in-out;
+                option {
+                  color: $aurexus;
+                  background-color: $mywhite;
+                }
+              }
+            }
+          }
+        }
+        .modal-body {
+          position: relative;
+          display: block;
+          padding: 15px 3%;
+          .bodycontainer {
+            position: relative;
+            display: block;
+            margin: 0 auto;
+            // background-color: red;
+            .projectcontent {
+              position: relative;
+              display: flex;
+              width: 100%;
+              .projectsidebar {
+                display: block;
+                position: relative;
+                width: 38%;
+                // max-height: 800px;
+                // overflow-y: scroll;
+                padding: 0 10px;
+                .leftside {
+                  position: relative;
+                  display: block;
+                  padding: 10px;
+                  h3 {
+                    margin: 0;
+                    text-align: center;
+                    font-size: 1.1rem;
+                    text-align: center;
+                    text-decoration: underline;
+                    margin-bottom: 10px;
+                  }
+                }
+                .leftpart {
+                  position: relative;
+                  display: block;
+                  // width: 40%;
+
+                  .container {
+                    // width: 90%;
+                    margin: 0 auto;
+                    text-align: center;
+                    background: linear-gradient(
+                      125deg,
+                      $aurexus 0%,
+                      #45c1fd 100%
+                    );
+                    padding: 1rem 1rem;
+                    border: solid 1px $aurexus;
+                    border-radius: 35px;
+                    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+                    color: $mywhite;
+                    form {
+                      margin: 20px;
+                      input {
+                        width: 250px;
+                        height: 30px;
+                        margin: 5px auto;
+                        border-radius: 10px;
+                        padding: 0 1rem;
+                        border: 1px solid $aurexus;
+                        // font-size: 1.3rem;
+                        background: $lightgray;
+                        color: $aurexus;
+                        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+                        transition: 0.7s;
+                      }
+                    }
+                    ul {
+                      display: block;
+                      margin: 0;
+                      text-align: left;
+                      padding: 0;
+                      max-height: 300px;
+                      overflow-y: scroll;
+                      li {
+                        position: relative;
+                        display: flex;
+                        padding: 10px;
+                        // grid-template-columns: 1fr 1fr;
+                        // grid-template-areas:
+                        // "x1 x2"
+                        border-bottom: solid 1px rgba(245, 245, 245, 0.473);
+                        margin: 3px auto;
+                        .leftli {
+                          position: relative;
+                          padding-left: 2px;
+                          grid-area: x1;
+                          width: 72%;
+                          .barremoi {
+                            text-decoration: line-through;
+                          }
+                        }
+                        .rightli {
+                          position: relative;
+                          display: flex;
+                          padding-left: 2px;
+                          grid-area: x2;
+                          width: 22%;
+                          button {
+                            @include defaultbutton;
+                            width: 75px;
+                          }
+                        }
+                      }
+                    }
+                  }
+                  .container02 {
+                    width: 90%;
+                    margin: 40px auto;
+                    text-align: center;
+                    background: linear-gradient(
+                      225deg,
+                      $lightgrey2 0%,
+                      $grey 100%
+                    );
+                    padding: 1rem 1rem;
+                    border: solid 1px $grey;
+                    border-radius: 35px;
+                    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+                    color: $aurexus;
+                    form {
+                      margin: 20px;
+                      h2 {
+                        margin: 0 auto;
+                      }
+                      input {
+                        width: 250px;
+                        height: 30px;
+                        margin: 5px auto;
+                        border-radius: 10px;
+                        padding: 0 1rem;
+                        border: 1px solid $grey;
+                        // font-size: 1.3rem;
+                        background: $lightgray;
+                        color: $aurexus;
+                        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+                        transition: 0.7s;
+                      }
+                      input[type="submit"] {
+                        @include defaultbutton;
+                        width: 75px;
+                      }
+                    }
+                    ul {
+                      display: block;
+                      margin: 0;
+                      text-align: left;
+                      padding: 0;
+                      max-height: 300px;
+                      overflow-y: scroll;
+                      li {
+                        position: relative;
+                        display: flex;
+                        padding: 10px;
+                        // grid-template-columns: 1fr 1fr;
+                        // grid-template-areas:
+                        // "x1 x2"
+                        border-bottom: solid 1px rgba(245, 245, 245, 0.473);
+                        margin: 3px auto;
+                        .leftli {
+                          position: relative;
+                          padding-left: 2px;
+                          grid-area: x1;
+                          width: 72%;
+                          .barremoi {
+                            text-decoration: line-through;
+                          }
+                        }
+                        .rightli {
+                          position: relative;
+                          display: flex;
+                          padding-left: 2px;
+                          grid-area: x2;
+                          width: 22%;
+                          button {
+                            @include defaultbutton;
+                            width: 75px;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              .projectmaincontent {
+                display: block;
+                position: relative;
+                width: 62%;
+                .rightside {
+                  position: relative;
+                  width: 80%;
+                  border-radius: 5px;
+                  padding: 2rem;
+                  margin: auto;
+                  background-color: $mywhite;
+                  // border-radius: 35px;
+                  border-bottom: solid 1px rgba(245, 245, 245, 0.473);
+                  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+                  height: fit-content;
+                  h3 {
+                    margin: 0;
+                    text-align: center;
+                    margin: 0;
+                    text-align: center;
+                    font-size: 1.1rem;
+                    text-align: center;
+                    text-decoration: underline;
+                    margin-bottom: 10px;
+                  }
+                }
+                .container {
+                  width: 95%;
+                  margin: 0 auto;
+                  padding: 10px 40px;
+                  border-radius: 5px;
+                  color: $aurexus;
+                  h2 {
+                    font-size: 1.3rem;
+                    text-align: center;
+                    text-decoration: underline;
+                  }
+                  form {
+                    margin: 2rem 0;
+                    input,
+                    textarea {
+                      margin: 5px auto;
+                      border-radius: 10px;
+                      padding: 0 1rem;
+                      border: 1px solid $aurexus;
+                      background: $mywhite;
+                      color: $aurexus;
+                      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+                      transition: 0.7s;
+                    }
+                    textarea {
+                      width: 90%;
+                      resize: vertical;
+                      padding: 1.5rem;
+                      margin: auto;
+                    }
+                    input {
+                      padding: 10px;
+                      width: 175px;
+                      &:hover {
+                        border: 1px solid $lightgray;
+                        background: $aurexus;
+                        color: $lightgray;
+                        cursor: pointer;
+                      }
+                    }
+                  }
+                  #list {
+                    text-align: left;
+                    // max-height: 1200px;
+                    // overflow-y: scroll;
+                    padding: 0;
+                    // scroll-snap-type: proximity;
+                    li {
+                      position: relative;
+                      display: block;
+                      width: 90%;
+                      color: $aurexus;
+                      margin: 5px auto;
+                      padding: 5px;
+                      background-color: $mywhite;
+                      border-radius: 5px;
+                      border-bottom: solid 1px rgba(245, 245, 245, 0.473);
+                      // box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+
+                      .leftli {
+                        position: relative;
+                        padding-left: 2px;
+                        grid-area: x1;
+                        width: 100%;
+                        padding: 0 10px;
+                        span {
+                          display: block;
+                          text-align: right;
+                          margin-right: 30px;
+                          color: grey;
+                          font-style: italic;
+                        }
+                        p {
+                          color: $aurexus;
+                          width: 90%;
+                          margin: 0;
+                        }
+                      }
+                      .rightli {
+                        position: relative;
+                        display: block;
+                        margin: 0;
+                        padding: 0;
+                        button {
+                          @include defaultbutton;
+                          width: 75px;
+                          position: relative;
+                          max-height: 25px;
+                          width: 75px;
+                          left: 80%;
+                          margin: 0 auto;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+
+              .rightpart {
+                position: relative;
+                // width: 60%;
+                // display: flex;
+                // flex-direction: column;
+                padding: 10px;
+                .container {
+                  width: 95%;
+                  margin: 0 auto;
+                  padding: 10px 40px;
+                  border-radius: 5px;
+                  color: $aurexus;
+                  h2 {
+                    font-size: 1.3rem;
+                    text-align: center;
+                    text-decoration: underline;
+                  }
+                  form {
+                    margin: 2rem 0;
+                    input,
+                    textarea {
+                      margin: 5px auto;
+                      border-radius: 10px;
+                      padding: 0 1rem;
+                      border: 1px solid $aurexus;
+                      background: $mywhite;
+                      color: $aurexus;
+                      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+                      transition: 0.7s;
+                    }
+                    textarea {
+                      width: 90%;
+                      resize: vertical;
+                      padding: 1.5rem;
+                      margin: auto;
+                    }
+                    input {
+                      padding: 10px;
+                      width: 175px;
+                      &:hover {
+                        border: 1px solid $lightgray;
+                        background: $aurexus;
+                        color: $lightgray;
+                        cursor: pointer;
+                      }
+                    }
+                  }
+                  #list {
+                    text-align: left;
+                    max-height: 1200px;
+                    overflow-y: scroll;
+                    padding: 0;
+                    // scroll-snap-type: proximity;
+                    li {
+                      position: relative;
+                      display: block;
+                      width: 90%;
+                      color: $aurexus;
+                      margin: 5px auto;
+                      padding: 5px;
+                      background-color: $mywhite;
+                      border-radius: 5px;
+                      // border-bottom: solid 1px rgba(245, 245, 245, 0.473);
+                      // box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+
+                      .leftli {
+                        position: relative;
+                        padding-left: 2px;
+                        grid-area: x1;
+                        width: 100%;
+                        padding: 0 10px;
+                        span {
+                          display: block;
+                          text-align: right;
+                          margin-right: 30px;
+                          color: grey;
+                          font-style: italic;
+                        }
+                          display: block;
+                          box-shadow: 0 0 0 rgba(0, 0, 0, 0) !important;
+                          list-style: circle !important;
+                          ul {
+                            display: block !important;
+                            box-shadow: 0 0 0 rgba(0, 0, 0, 0) !important;
+                            list-style: circle !important;
+                          }
+                          li {
+                            display: block !important;
+                            list-style: circle !important;
+                            box-shadow: 0 0 0 rgba(0, 0, 0, 0) !important;
+                          }
+                        p {
+                          color: $aurexus;
+                          width: 90%;
+                          margin: 0;
+                        }
+                      }
+                      .rightli {
+                        position: relative;
+                        display: block;
+                        margin: 0;
+                        padding: 0;
+                        button {
+                          @include defaultbutton;
+                          width: 75px;
+                          position: relative;
+                          max-height: 25px;
+                          width: 75px;
+                          left: 80%;
+                          margin: 0 auto;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        .modal-footer {
+          .pricecontainer {
+            position: relative;
+            display: block;
+            width: 100%;
+            background-color: $lightgrey2;
+            .formcontainer {
+              display: block;
+              position: relative;
+              width: 80%;
+              margin: 30px auto;
+              padding: 20px;
+              h3 {
+                text-align: center;
+              }
+              form {
+                display: grid;
+                grid-template-columns: auto auto auto auto auto;
+                grid-template-rows: auto auto auto;
+                grid-template-areas:
+                  "a1 a2 a3 a4 a5"
+                  "a6 a7 a8 vide vide"
+                  "a9 a9 a9 a9 a9"
+                  "a a a a a";
+                position: relative;
+                width: 100%;
+                border: solid 1px $grey;
+                border-radius: 5px;
+                padding: 5px;
+                background-color: $lightgray;
+                label {
+                  text-align: center;
+                }
+                .typrestations,
+                .items,
+                .description,
+                .prixunitaire,
+                .uniteprix {
+                  position: relative;
+                  display: flex;
+                  flex-direction: column;
+                  select,
+                  input {
+                    height: 30px;
+                    padding: 5px;
+                    margin: 2px;
+                    background: $mywhite;
+                    border: none;
+                    border-bottom: solid 1px $grey;
+                  }
+                }
+                .typrestations {
+                  grid-area: a1;
+                  width: 250px;
+                }
+                .items {
+                  grid-area: a2;
+                  width: 250px;
+                }
+                .description {
+                  grid-area: a3;
+                  width: 240px;
+                }
+                .prixunitaire {
+                  grid-area: a4;
+                  width: 75px;
+                  height: 25px !important;
+                }
+                .uniteprix {
+                  grid-area: a5;
+                  width: 150px;
+                }
+                .dateapplication {
+                  grid-area: a6;
+                  width: 125px;
+                  margin: 15px auto;
+                  height: 30px;
+                }
+                .checkbox01 {
+                  grid-area: a7;
+                  width: 125px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  label {
+                    cursor: pointer;
+                    &:hover {
+                      text-decoration: underline;
+                      color: $grey;
+                    }
+                  }
+                  input[type="checkbox"] {
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 20px;
+                  }
+                }
+                .checkbox02 {
+                  grid-area: a8;
+                  width: 150px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-around;
+                  label {
+                    cursor: pointer;
+                    &:hover {
+                      text-decoration: underline;
+                      color: $grey;
+                    }
+                  }
+                  input[type="checkbox"] {
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 20px;
+                  }
+                }
+                .vide {
+                  grid-area: vide;
+                }
+                .mypricecomment {
+                  position: relative;
+                  display: block;
+                  grid-area: a9;
+                  height: 30px;
+                  padding: 5px;
+                  margin: 2px;
+                  background: $mywhite;
+                  border: none;
+                  border-bottom: solid 1px $grey;
+                }
+                .validateprice {
+                  grid-area: a;
+                  width: 40%;
+                  margin: auto;
+                  @include defaultbutton;
+                }
+              }
+            }
+
+            .addunit {
+              display: block;
+              position: relative;
+              width: 80%;
+              margin: 0 auto 30px;
+              padding: 20px;
+              h3 {
+                text-align: center;
+              }
+              .formcontainer02 {
+                position: relative;
+                display: flex;
+                width: 100%;
+                form {
+                  border: solid 1px $grey;
+                  border-radius: 5px;
+                  padding: 5px;
+                  background-color: $lightgray;
+                  margin: 10px 2px;
+                  width: 25%;
+                  .newunit {
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    label {
+                      margin-top: 5px;
+                      text-decoration: underline;
+                    }
+                    input {
+                      position: relative;
+                      display: block;
+                      grid-area: a9;
+                      height: 30px;
+                      padding: 5px;
+                      margin: 2px;
+                      background: $mywhite;
+                      border: none;
+                      border-bottom: solid 1px $grey;
+                    }
+                    select {
+                      position: relative;
+                      display: block;
+                      grid-area: a9;
+                      height: 30px;
+                      padding: 5px;
+                      margin: 2px;
+                      background: $mywhite;
+                      border: none;
+                      border-bottom: solid 1px $grey;
+                    }
+                    input[type="submit"] {
+                      @include defaultbutton;
+                    }
+                  }
+                }
+              }
+            }
+          }
+          #closeme {
+            position: relative;
+            display: block;
+            margin: 10px auto 20px;
+            padding: 10px;
+            border: solid 1px $color4;
+            border-radius: 20px;
+            max-width: 200px;
+            width: 10%;
+            min-width: 100px;
+            color: $color1;
+            border: solid 1px $color8;
+            background: $aurexus;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+            transition: 1s;
+            &:hover {
+              color: $color4;
+              background: $grey;
+              border: solid 1px $color4;
+              left: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

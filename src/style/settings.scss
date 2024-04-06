@@ -1,0 +1,274 @@
+$grey: #b7b5b6;
+$lightgray: #e9e9eb;
+$lightgrey2: #e0dedf;
+$mywhite: whitesmoke;
+$aurexus: #000066;
+
+$color1: #ffecd6;
+$color2: #ccb59b;
+$color3: #997a56;
+$color4: #664825;
+$color5: #331f08;
+$color6: #3d8a6c;
+$color7: #8cafa2;
+$color8: #e7e7e7;
+$color9: #faefe3;
+$color10: #ffecd6c0;
+
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: $aurexus;
+  background: $lightgray;
+
+  .path {
+    transition: 0.6s fill;
+    fill: $grey;
+    cursor: pointer;
+    &:hover {
+      fill: #ffcc00 !important;
+      cursor: pointer;
+    }
+  }
+
+  #accesslog {
+    padding-top: 100px;
+    width: 100%;
+    height: 100%;
+    background-color: $lightgray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    transition: 1s ease-in-out;
+    .container {
+      width: 540px;
+      margin: 0 auto;
+      text-align: center;
+      background: linear-gradient(125deg, $aurexus 0%, #45c2fc 100%);
+      padding: 2rem 1rem;
+      border-radius: 35px;
+      color: $lightgray;
+      box-shadow: 0px 10px 30px 0px #3f3f3f;
+      form {
+        margin: 2rem 0;
+        display: flex;
+        flex-direction: column;
+      }
+      form input {
+        display: block;
+        width: 250px;
+        height: 50px;
+        border-radius: 50px;
+        margin: 5px auto;
+        padding: 0 1rem;
+        border: 2px solid white;
+        font-size: 1.3rem;
+        background: $lightgray;
+        color: $aurexus;
+        box-shadow: 0px 2px 10px 0px #3f3f3f;
+        transition: 0.7s;
+      }
+      form input::placeholder {
+        color: #5effc9;
+      }
+      form input:focus {
+        border: 3px solid grey;
+      }
+      input[type="submit"] {
+        margin-top: 20px;
+        &:hover {
+          background: $aurexus;
+          color: $lightgray;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+@mixin defaultinput {
+  display: block;
+  min-width: 50px;
+  // width: 80%;
+  max-width: 400px;
+  min-height: 40px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: solid 1px $color4;
+  background-color: whitesmoke;
+  border-radius: 20px;
+}
+
+@mixin defaultbutton {
+  margin: 5px auto;
+  border-radius: 10px;
+  padding: 0 1rem;
+  border: 1px solid $aurexus;
+  background: $lightgray;
+  color: $aurexus;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  transition: 0.7s;
+  padding: 5px;
+  width: 175px;
+  height: 35px;
+  &:hover {
+    border: 1px solid $lightgray;
+    background: $aurexus;
+    color: $lightgray;
+    cursor: pointer;
+  }
+}
+
+@mixin homemodal {
+  position: absolute;
+  display: none;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.6);
+  transition: 1s ease-in-out;
+  .lastprojects {
+    position: absolute;
+    display: block;
+    top: 20%;
+    left: 50%;
+    transform: translateY(-80%);
+    transform: translateX(-50%);
+    background-color: $lightgray;
+    width: 80%;
+    height: fit-content;
+    h3 {
+      text-align: center;
+    }
+    div {
+      display: block;
+      text-align: center;
+      button {
+        text-align: center;
+        @include defaultbutton;
+      }
+    }
+
+    .selectlist {
+      position: relative;
+      grid-area: b1;
+      list-style: none;
+      width: 100%;
+      border: solid 1px $grey;
+      border-radius: 5px;
+      margin: 10px 0;
+      padding: 0;
+      max-height: 300px;
+      overflow-y: scroll;
+      li {
+        position: relative;
+        display: flex;
+        align-items: center;
+        min-height: 45px;
+        background-color: white;
+        width: 100%;
+        a {
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          text-decoration: none;
+          min-height: 45px;
+          padding: 0 10px;
+          border-radius: 2px;
+          width: 100%;
+          cursor: pointer;
+          span {
+            position: relative;
+            text-align: right;
+            display: block;
+            width: 30%;
+            padding: 10px 5px;
+            color: $color4;
+            &:hover {
+              color: $lightgray;
+            }
+          }
+          &:hover {
+            color: $grey;
+            background-color: $aurexus;
+          }
+        }
+      }
+    }
+    
+    .selectlist03 {
+      grid-area: c1;
+      list-style: none;
+      width: 100%;
+      border: none;
+      // border-radius: 5px;
+      margin: 0;
+      padding: 0;
+      max-height: 300px;
+      overflow-y: scroll;
+      overflow-y: scroll;
+      tr {
+        position: relative;
+        display: flex;
+        align-items: center;
+        min-height: 45px;
+        background-color: white;
+        width: 100%;
+        &:hover {
+          color: $lightgrey2;
+          background-color: $aurexus;
+        }
+        a {
+          position: relative;
+          display: grid;
+          align-items: left;
+          text-align: left;
+          justify-content: space-between;
+          text-decoration: none;
+          min-height: 45px;
+          padding: 0 10px;
+          border-radius: 2px;
+          width: 100%;
+          font-size: 9pt;
+          cursor: pointer;
+          grid-template-rows: 1fr;
+          grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+          grid-template-areas: "price01 price02 price03 Price04 price05  price06  price08 price07";
+          &:hover span {
+            color: $lightgrey2;
+            background-color: $aurexus;
+          }
+          td {
+            position: relative;
+            text-align: left;
+            display: block;
+            // width: 30%;
+            padding: 5px 5px;
+            color: $aurexus;
+          }
+          // .price01{
+          //   grid-area: price01;
+          //   width: 30px;
+          // }
+          // .price02{
+          //   grid-area: price02;
+          // }
+          // .price03{
+          //   grid-area: price03;
+          // }
+          // .price04{
+          //   grid-area: price04;
+          // }
+          // .price05{
+          //   grid-area: price05;
+          //   width: 30px;
+          // }
+        }
+      }
+    }
+  }
+}

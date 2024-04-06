@@ -1,0 +1,14 @@
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #000066;
+}
+body path {
+  transition: 0.6s fill;
+  fill: #cfcfc4;
+}
+body path:hover {
+  fill: #000066;
+}/*# sourceMappingURL=settings.css.map */
