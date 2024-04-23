@@ -4,7 +4,7 @@ export const GET_UNITY = "GET_UNITY"
 
 export const addUnity = (data) => {
     return(dispatch) => {
-        axios.post('https://api.axel.mg/addunity', data).then(() => {
+        axios.post('https://task.axel.mg/addunity', data).then(() => {
             dispatch({ type: ADD_UNITY, payload: data });
         });
     }
@@ -12,7 +12,7 @@ export const addUnity = (data) => {
 
 export const getUnity = () => { 
     return (dispatch) => {
-        axios.get('https://api.axel.mg/getunity').then((res) => {
+        axios.get('https://task.axel.mg/getunity').then((res) => {
             dispatch({ type: GET_UNITY, payload: res.data });
         });
     }

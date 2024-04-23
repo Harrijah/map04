@@ -27,7 +27,7 @@ const Modal = () => {
             <div className="homeform">
               <form
                 method="post"
-                action="https://api.axel.mg/addnewproject"
+                action="https://task.axel.mg/addnewproject"
                 id="myform"
               >
                 <div className="midtitle">A propos du projet : </div>

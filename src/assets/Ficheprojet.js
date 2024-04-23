@@ -586,9 +586,9 @@ const Ficheprojet = () => {
                           <li key={comment.id}>
                             <div className="leftli">
                               <span>{comment.datecomment}</span>
-                              <p>{comment.commentaire}</p>
+                              {/* <p>{comment.commentaire}</p> */}
                               {/* Utiliser convertDraftToHtml pour afficher le contenu Draft.js */}
-                              {/* <div dangerouslySetInnerHTML={{ __html: convertDraftToHtml(JSON.parse(comment.commentaire)) }} /> */}
+                              <div dangerouslySetInnerHTML={{ __html: convertDraftToHtml(JSON.parse(comment.commentaire)) }} />
                               
                             </div>
                             <div className="rightli">

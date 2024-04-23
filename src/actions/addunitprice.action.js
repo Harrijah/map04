@@ -4,7 +4,7 @@ export const GET_UNITPRICE = 'GET_UNITPRICE';
 
 export const addUnitprice = (data) => {
     return (dispatch) => {
-        axios.post('https://api.axel.mg/addunitprice', data).then(() => {
+        axios.post('https://task.axel.mg/addunitprice', data).then(() => {
             dispatch({ type: ADD_UNITPRICE, payload: data });
         });
     }
@@ -12,7 +12,7 @@ export const addUnitprice = (data) => {
 
 export const getUnitprice = () => {
     return (dispatch) => {
-        axios.get('https://api.axel.mg/getunitprice').then((res) => {
+        axios.get('https://task.axel.mg/getunitprice').then((res) => {
             dispatch({ type: GET_UNITPRICE, payload: res.data });
         })
     }

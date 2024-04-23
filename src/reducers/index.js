@@ -19,6 +19,7 @@ import unitpriceReducer from "./addunitprice.reducer";
 import missionReducer from "./missions.reducer";
 import missionprioReducer from "./missionprio.reducer";
 import missionstatusReducer from "./missionstatus.reducer";
+import logReducer from "./log.reducer";
 
 export default combineReducers({
     zoneReducer,
@@ -41,4 +42,5 @@ export default combineReducers({
     missionReducer,
     missionprioReducer,
     missionstatusReducer,
+    logReducer,
 });

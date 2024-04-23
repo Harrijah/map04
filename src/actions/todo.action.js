@@ -8,7 +8,7 @@ export const DELETE_TODO = "DELETE_TODO";
 
 export const getTodo = () => {
   return (dispatch) => {
-    return axios.get("https://api.axel.mg/getitem").then((res) => {
+    return axios.get("https://task.axel.mg/getitem").then((res) => {
       dispatch({ type: GET_TODO, payload: res.data });
     });
   };
@@ -16,7 +16,7 @@ export const getTodo = () => {
 
 export const postTodo = (data) => {
   return (dispatch) => {
-    return axios.post("https://api.axel.mg/addtodo", data).then(() => {
+    return axios.post("https://task.axel.mg/addtodo", data).then(() => {
       dispatch({ type: POST_TODO, payload: data });
     });
   };
@@ -24,7 +24,7 @@ export const postTodo = (data) => {
 
 export const editTodo = (data) => {
   return (dispatch) => {
-    return axios.put("https://api.axel.mg/updateitem", data).then(() => {
+    return axios.put("https://task.axel.mg/updateitem", data).then(() => {
         dispatch({ type: EDIT_TODO, payload: data });
     });
   };
@@ -32,7 +32,7 @@ export const editTodo = (data) => {
 
 export const deleteTodo = (id) => {
   return (dispatch) => {
-    return axios.delete(`https://api.axel.mg/deleteitem/${id}`).then(() => {
+    return axios.delete(`https://task.axel.mg/deleteitem/${id}`).then(() => {
       dispatch({ type: DELETE_TODO, payload: id });
     });
   };
