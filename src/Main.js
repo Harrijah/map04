@@ -651,7 +651,7 @@ function Main() {
               <div id="leftpart" style={{ display :  devis ? "" : 'none' }}>
                 <div id="togglemap">
                   <button>
-                    Carte interactive
+                    Carte
                   </button>
                 </div>
 
